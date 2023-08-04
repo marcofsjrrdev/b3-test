@@ -53,7 +53,7 @@ No Visual Studio, vá ao menu "Teste" e selecione "Executar Todos os Testes" par
 | Parâmetro   | Tipo       | Descrição                           |
 | :---------- | :--------- | :---------------------------------- |
 | `initialValue` | `double` | Valor Inicial de Investimento |
-| `months` | `int` | Valor Inicial de Investimento |
+| `months` | `int` | Meses de Investimento |
 
 #### Retorna um item
 
