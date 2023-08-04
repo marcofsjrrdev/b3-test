@@ -1,0 +1,36 @@
+<section class="vh-100 d-flex align-items-center justify-content-center">
+  <div class="col-sm-7 bg-light p-5 rounded shadow">
+    <div class="text-center mt-5">
+      <img src="https://www.b3.com.br/lumis-theme/br/com/bvmf/internet/theme/bvmf-internet/img/logo-b3-novo.svg" width="110" />
+      <h1 class="fs-2 fw-bold mt-4">Calculadora CDB</h1>
+    </div>
+    <div class="row justify-content-md-center mt-4 mb-4">
+      <div class="col-sm-5 mb-2">
+        <div class="text-white bg-secondary rounded shadow p-1 text-center">
+          <span class="fw-bold">Taxa CDI: {{ taxCDI }}%</span>
+        </div>
+      </div>
+      <div class="col-sm-5 mb-2">
+        <div class="text-white bg-secondary rounded shadow p-1 text-center">
+          <span class="fw-bold">Taxa Banco: {{ taxBank }}%</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" [(ngModel)]="initialValue" placeholder="Valor Inicial">
+        <label for="floatingInput">Valor Inicial</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" [(ngModel)]="months" placeholder="Meses">
+        <label for="floatingInput">Meses</label>
+      </div>
+      <div class="text-center mt-5 mb-5">
+        <button class="btn btn-dark fw-bold fs-6 w-50 shadow" (click)="calculate()">Calcular</button>
+      </div>
+      <div class="text-center fs-3 fw-bold" *ngIf="liquidValue !== null">
+        <p>Valor Final do CDB: <span class="fw-normal fst-italic">{{ liquidValue | currency:'BRL' }}</span></p>
+      </div>
+    </div>
+  </div>
+</section>
