@@ -26,13 +26,16 @@ namespace B3Test.Tests
         }
 
         [Theory]
-        [InlineData(5000, 12, 1000)] // Valor esperado para o imposto
-        [InlineData(10000, 6, 2250.00)] // Outros exemplos de valores
+        [InlineData(5000, 12, 123.08)] // Valor esperado para o imposto
+        [InlineData(10000, 6, 134.45)] // Outros exemplos de valores
         [InlineData(0, 0, 0)] // Valor inicial e meses igual a zero
         public void CalculateTax_ShouldCalculateCorrectly(decimal initialValue, int months, decimal expectedTax)
         {
+            //Arrange
+            decimal getCalculateCDB = cdbService.CalculateCDB(initialValue, months);
+
             // Act
-            decimal result = cdbService.CalculateTax(initialValue, months);
+            decimal result = cdbService.CalculateTax(getCalculateCDB, initialValue, months);
 
             // Assert
             Assert.Equal(expectedTax, result, 2);
